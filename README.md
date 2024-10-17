@@ -3,7 +3,7 @@
 # Liar's Dice - ICT-STRYPES Code Challenge
 
 This is a Python-based dice game where human players compete against bots, with the hardest being AI, across various difficulty levels. The bots utilize their own gameplay logic based on difficulty and dynamic strategies such as safe play, aggressive moves, or bluffing, providing a challenging gaming experience. The game involves bidding on dice quantities and values, as well as calling bluffs or fake bids.
-
+- **API-KEY** copy the api key from here [**Liar's Dice AI API-KEY**](https://liar-s-dice-api-copy-deploy.onrender.com/) and use it in **wild_ai_bot_setup.py**
 ## Features
 
 - **Human vs. AI Bots**: Play against up to 3 bots with adjustable difficulty levels:
