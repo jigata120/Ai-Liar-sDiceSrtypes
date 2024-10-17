@@ -30,8 +30,12 @@ The AI logic for the bots is built using the following approaches:
 
 ## How to Run
 
-1. Clone the repository.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/jigata120/Ai-Liar-sDiceSrtypes
 2. Install required libraries:
    ```bash
    pip install -r requirements.txt
-3. Run app.py file
+3. Get and set the api-key from here [**Liar's Dice AI API-KEY**](https://liar-s-dice-api-copy-deploy.onrender.com/) in **wild_ai_bot_setup.py**
+4. Run **app.py** file
+5. Enjoy the game. 😊
