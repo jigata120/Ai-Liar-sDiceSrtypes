@@ -60,6 +60,7 @@ class BotPlayer(Player):
     def __init__(self, name, difficulty):
         super().__init__(name)
         self.difficulty = difficulty
+        self.play_style = "optimal"
 
     def make_bid(self, current_bid, total_dice):
         if self.difficulty == "easy":
@@ -102,12 +103,25 @@ class BotPlayer(Player):
         else:
             return (quantity + 1, value)
 
+    def update_play_style(self):
+        num_dice = len(self.dice)
+
+        if num_dice <= 2:
+            self.play_style = "safe"
+        elif num_dice == 5:
+            if random.random() < 0.5:
+                self.play_style = "aggressive"
+            else:
+                self.play_style = "bluff"
+        else:
+            self.play_style='optimal'
+
     def hard_bid(self, current_bid, total_dice):
         game_flow = app.history
         dice = [die.value for die in self.dice]
-        play_style = "optimal"
+        self.update_play_style()
         wild_ones_mode = app.game.state.wild_ones
-        new_bit = wild_ai_make_bid(game_flow, dice, self.name, play_style, wild_ones_mode)
+        new_bit = wild_ai_make_bid(game_flow, dice, self.name, self.play_style, wild_ones_mode)
         return new_bit
 
     def call_fake_bid(self, current_bid, players, wild_ones):
